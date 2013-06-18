@@ -1,0 +1,90 @@
+Changes in version 1.2.4:
+- New relationship engine to fetch easily many levels of relationships per query
+- For more details about this new engine, goto the FAQ : 'How to use relationship engine to fetch datas from many tables ?'
+- Add 2 functions : qx::dao::execute_query and qx::dao::call_query to call a stored procedure or a custom SQL query
+- For more details about this new feature, goto the FAQ : 'How to execute a stored procedure or a custom SQL query ?'
+- Add support for boost::optional type to manage NULL database value without using QVariant type
+- New class : qx::QxDaoAsync to make easier to execute queries in asynchronous way (multi-thread)
+- For more details about this new class, goto the FAQ : 'How to use qx::QxDaoAsync class to execute queries in asynchronous way (multi-thread) ?'
+
+Changes in version 1.2.3:
+- New interface 'qx::IxPersistable' (abstract class) to simplify polymorphism using QxOrm library
+- For more details about this new interface, goto the FAQ : 'How to use qx::IxPersistable interface ?'
+- New methods into 'qx::IxCollection' interface to iterate over each items without knowing its type
+- New option into 'QxOrm.pri' file to build QxOrm library statically (see '_QX_STATIC_BUILD' option)
+- New triggers : 'qx::dao::on_before_fetch' and 'qx::dao::on_after_fetch' (for more details, goto the FAQ : 'How to define a Trigger with QxOrm ?')
+- Add 'std::type_info' class information to introspection engine
+- Some minor bugs fixed ('qx::dao::sql_error' exception message, SQL query column alias, mutex, etc.)
+
+Changes in version 1.2.2:
+- New module to provide a validation engine : QxValidator module
+- For more details about QxValidator module, goto the FAQ of QxOrm library : 'How to use QxValidator module to validate automatically an instance ?'
+- Fix last insert ID with PostgreSQL using 'RETURNING' keyword : fetch inserted ID instead of OID
+- Improve SQL generator providing the good SQL type for all databases
+- Add support for special database keywords using '[', ']' and '"' characters
+
+Changes in version 1.2.1:
+- Improve 'qx::QxSqlQuery' class : new engine to build queries without writing SQL, for more details, see the FAQ 'How to build a query without writing SQL with the class qx::QxSqlQuery ?'
+- Improve 'qx::QxSession' class : provide persistent methods (CRUD) without using 'qx::dao::xxx' functions, for more details, see the FAQ 'How to use a session (qx::QxSession class) to manage automatically database transactions (using C++ RAII) ?'
+- Implement 'repository' pattern to provide a common interface for persistent methods (CRUD) with 3 new classes : 'qx::IxRepository', 'qx::QxRepository<T>' and 'qx::QxRepositoryX'
+- Possibility to serialize a QVariant 'UserType' with serialization engine of QxOrm library
+- Improve thread-safe 'qx::cache' : add insertion date-time into the cache to verify that an element must be updated or not, for more details, see the FAQ 'How to use the cache (functions into namespace qx::cache) of QxOrm library ?'
+- FAQ updated on QxOrm website with now 28 questions and answers
+
+Changes in version 1.1.9:
+- Possibility to register automatically Qt meta-properties (using Q_PROPERTY macro) to QxOrm context without writing mapping function per class (void qx::register_class<T>())
+- Strong integration with Qt introspection/moc engine : for more details about this new feature, goto the FAQ 'How to register automatically Qt meta-properties to QxOrm context ?'
+- Improve introspection/reflection engine : see the FAQ (How to use introspection engine (or reflection engine) of QxOrm library ?) for more details
+- Possibility to add meta-data (using a property bag) to introspection engine : see 'IxClass', 'IxDataMember' and 'IxFunction' classes for more details
+- Add function 'qx::QxClassX::dumpSqlSchema()' to explain how to create your own SQL schema based on C++ classes
+- New class 'qx::QxSimpleCrypt' to provide encryption/decryption (thanks very much to Andre Somers) : so it's now possible to store encrypted data into database without using an external library
+- QxService module : new feature to encrypt/decrypt data before transfering it over network
+
+Changes in version 1.1.8:
+- QxOrm library can now be used on Mac (thanks very much to Dominique Billet) : see 'osx_build_all_debug.sh' and 'osx_build_all_release.sh' scripts to build QxOrm library and all samples in './test/' directory
+- Add 'qx::QxSession' class : define a session to manage automatically database transactions (using C++ RAII), see the FAQ for more details
+- Add 'qx::QxDateNeutral', 'qx::QxTimeNeutral' and 'qx::QxDateTimeNeutral' classes : helper classes to store date-time value into database under neutral format => cross database compatibility
+
+Changes in version 1.1.7:
+- Add soft delete behavior : see the FAQ (How to define a soft delete behavior ?) for more details about this new feature
+- Add functions into namespace 'qx::dao' to update an element with a SQL condition : update_by_query, update_optimized_by_query, etc.
+- Fix a bug when QVariant type is used for a property of a persistent class : so, it's now possible to insert NULL value into database
+
+Changes in version 1.1.6:
+- QxOrm library online documentation available : <http://www.qxorm.com/doxygen/index.html>
+- Possibility to disable QtGui dependency using compilation option in 'QxConfig.h' file : _QX_ENABLE_QT_GUI_DEPENDENCY
+- Possibility to disable QtNetwork dependency (so QxService module too) using compilation option in 'QxConfig.h' file : _QX_ENABLE_QT_NETWORK_DEPENDENCY
+- Provide a new macro to register abstract class into QxOrm context : QX_REGISTER_ABSTRACT_CLASS()
+
+Changes in version 1.1.5:
+- New feature available : 'QxService' module to create C++ application server
+- 'QxService' provides an easy and powerful way to create services and to transfer data over network
+- New tutorial available to explain how 'QxService' module works
+- New sample available at './test/qxClientServer' directory
+- QxOrm can be built with 'CONFIG += no_keywords' flag in '*.pro' files
+- Bug fix with 'qx::dao::create_table<>' function and relation 'many-to-many'
+- QxOrm should now build fine with GCC <= 4.2
+
+Changes in version 1.1.4:
+- New parameter in functions 'qx::dao::fetch_by_id', 'qx::dao::fetch_all', 'qx::dao::fetch_by_query' and 'qx::dao::update' to define a list of properties to fetch/update (by default, all properties are fetched/updated)
+- Support multi-columns primary key (composite key) : see sample './test/qxBlogCompositeKey/'
+- Improve strategy of inheritance : QxOrm supports 'Concrete Table Inheritance' strategy ('Concrete Table Inheritance' becomes default strategy)
+- New smart-pointer 'qx::dao::ptr<T>' based on Qt 'QSharedPointer<T>' to provide 2 new features : 'is dirty' and 'update optimized'
+- 'qx::dao::ptr<T>' can be used with a simple object and with many containers (stl, boost, Qt and 'qx::QxCollection' containers)
+- 'qx::dao::ptr<T>' keeps original values from database and provides a 'isDirty()' method to retrieve all properties changed
+- 'qx::dao::update_optimized' must be used with 'qx::dao::ptr<T>' to save into database only properties changed
+
+Changes in version 1.1.3:
+- This version works fine with MinGW on Windows
+
+Changes in version 1.1.2:
+- License LGPL
+- Fix compilation problems on Linux and boost > 1.38
+- Fix sql query with MySql database
+- Disable assert when qx::dao functions return an error
+
+Changes in version 1.1.1:
+- This version supports Visual Studio 2010
+
+Changes in version 1.1.0:
+- First release

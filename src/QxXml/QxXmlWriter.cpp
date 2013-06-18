@@ -1,0 +1,77 @@
+/****************************************************************************
+**
+** http://www.qxorm.com/
+** http://sourceforge.net/projects/qxorm/
+** Original file by Lionel Marty
+**
+** This file is part of the QxOrm library
+**
+** This software is provided 'as-is', without any express or implied
+** warranty. In no event will the authors be held liable for any
+** damages arising from the use of this software.
+**
+** GNU Lesser General Public License Usage
+** This file must be used under the terms of the GNU Lesser
+** General Public License version 2.1 as published by the Free Software
+** Foundation and appearing in the file 'license.lgpl.txt' included in the
+** packaging of this file.  Please review the following information to
+** ensure the GNU Lesser General Public License version 2.1 requirements
+** will be met: http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html.
+**
+** If you have questions regarding the use of this file, please contact :
+** contact@qxorm.com
+**
+****************************************************************************/
+
+#include <QxPrecompiled.h>
+
+#include <QxXml/QxXmlWriter.h>
+
+#include <QxMemLeak/mem_leak.h>
+
+namespace qx {
+
+QString QxXmlWriter::writeBinaryData(const QString & namespaceUri, const QString & name, QxXmlWriter::type_byte_arr_ptr pData)
+{
+   QString sKey(getNextKeyBinaryData());
+   m_mapBinaryData.insert(sKey, pData);
+
+   writeStartElement(namespaceUri, name);
+   writeAttribute(QX_XML_ATTRIBUTE_IS_BINARY_DATA, "1");
+   writeCharacters(sKey);
+   writeEndElement();
+
+   return sKey;
+}
+
+QString QxXmlWriter::writeBinaryData(const QString & qualifiedName, QxXmlWriter::type_byte_arr_ptr pData)
+{
+   QString sKey(getNextKeyBinaryData());
+   m_mapBinaryData.insert(sKey, pData);
+
+   writeStartElement(qualifiedName);
+   writeAttribute(QX_XML_ATTRIBUTE_IS_BINARY_DATA, "1");
+   writeCharacters(sKey);
+   writeEndElement();
+
+   return sKey;
+}
+
+} // namespace qx
+
+QDataStream & operator << (QDataStream & stream, const qx::QxXmlWriter & xmlWriter)
+{
+   stream << xmlWriter.getXml();
+   stream << (qint32)(xmlWriter.getBinaryDataCount());
+
+   qx::QxXmlWriter::type_hash_bin_data_itr itr = xmlWriter.getBinaryDataItr();
+
+   while (itr.hasNext())
+   {
+      itr.next();
+      stream << itr.key();
+      stream << (* itr.value());
+   }
+
+   return stream;
+}

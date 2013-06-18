@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <title>QxOrm - C++ Object Relational Mapping library (ORM)</title>
+  <meta name="generator" content="Amaya, see http://www.w3.org/Amaya/">
+  <style type="text/css">
+   .comment { color: #008000; font-style: italic; }
+   .pre { color: #000099; }
+   .string { color: #DF0101; }
+   .char { color: #009900; }
+   .float { color: #996600; }
+   .int { color: #999900; }
+   .bool { color: #000000; font-weight: bold; }
+   .type { color: #FF6633; }
+   .flow { color: #FF0000; }
+   .keyword { color: #990000; }
+   .operator { color: #663300; font-weight: bold; }
+   .operator { color: #663300; font-weight: bold; }
+  </style>
+</head>
+<body>
+<table border="0" style="width: 80%" align="center">
+  <col><col><col>
+  <tbody>
+    <tr>
+      <td><a href="./home.html"><img alt="QxOrm" src="./resource/logo_qxorm.jpg" width="256" height="61" align="left" border="0"></a></td>
+      <td align="right" style="vertical-align:bottom">
+        <img alt="Windows" src="./resource/logo_windows.gif" width="35" height="35">
+        <img alt="Linux" src="./resource/logo_linux.gif" width="35" height="35">
+        <img alt="Macintosh" src="./resource/logo_mac.gif" width="35" height="35">
+      </td>
+      <td width="70"><img alt="C++" src="./resource/logo_cpp.jpg" width="50" height="50" align="right"></td>
+    </tr>
+  </tbody>
+</table>
+<hr style="width: 80%" align="center" size="1" color="#100D5A">
+<table border="0" style="width: 80%" align="center">
+  <col><col><col><col><col><col>
+  <tbody>
+    <tr>
+      <td align="center"><a href="./home.html"><img alt="Home"
+        src="./resource/link_home.jpg" width="120" height="35"
+        style="border:1px solid #100D5A; border-color:#100D5A;"></a></td>
+      <td align="center"><a href="./download.html"><img alt="Download"
+        src="./resource/link_download.jpg" width="120" height="35"
+        style="border:1px solid #100D5A; border-color:#100D5A;"></a></td>
+      <td align="center"><a href="./quick_sample.html"><img alt="Quick sample"
+        src="./resource/link_quick_sample.jpg" width="120" height="35"
+        style="border:1px solid #100D5A; border-color:#100D5A;"></a></td>
+      <td align="center"><a href="./tutorial.html"><img alt="Tutorial"
+        src="./resource/link_tutorial.jpg" width="120" height="35"
+        style="border:1px solid #100D5A; border-color:#100D5A;"></a></td>
+      <td align="center"><a href="./faq.html"><img alt="Faq"
+        src="./resource/link_faq.jpg" width="120" height="35"
+        style="border:1px solid #100D5A; border-color:#100D5A;"></a></td>
+      <td align="center"><a href="./link.html"><img alt="Link"
+        src="./resource/link_link.jpg" width="120" height="35"
+        style="border:1px solid #100D5A; border-color:#100D5A;"></a></td>
+    </tr>
+  </tbody>
+</table>
+<hr style="width: 80%" align="center" size="1" color="#100D5A">
+<table border="0" style="width: 80%" align="center">
+  <col><col><col><col><col><col>
+  <tbody><tr>
+  <td align="left" valign="top"><font size="2">QxOrm  &gt;&gt;  Home</font></td>
+  <td align="right" valign="top"><font size="2">Current version : QxOrm 1.2.4 (LGPL) - <a href="../doxygen/index.html" target="_blank">QxOrm library online documentation</a></font></td>
+  <td width="10px"></td>
+  <td width="40px" height="30px"><a href="../qxorm_fr/home.html"><img alt="Version française du site" src="./resource/FR.png" width="40" height="30" border="0"></a></td>
+  <td width="40px" height="30px"><a href="../qxorm_en/home.html"><img alt="Web site english version" src="./resource/GB.png" width="40" height="30" border="0"></a></td>
+  <td width="40px" height="30px"><a href="http://sites.google.com/site/qxormpostgres/" target="_blank"><img alt="" src="./resource/ES.png" width="40" height="30" border="0"></a></td>
+  </tr></tbody>
+</table>
+<table border="1" frame="vsides" rules="cols" style="width: 80%" align="center" cellpadding="6" bgcolor="#F2F2F4">
+  <col>
+  <tbody>
+    <tr>
+      <td align="justify">
+        <table border="0" style="width: 100%" align="center">
+          <col><col>
+          <tbody>
+            <tr>
+              <td><b>QxOrm is a C++ library designed to provide <i>Object Relational Mapping (ORM)</i> feature to C++ users.</b><br>
+                 With a simple <b>C++ setting function by class</b> (like <i>Hibernate</i> XML mapping file), you will have access to the following features :<br>
+                 <ul>
+                   <li><b><font style="background-color:yellow">persistence</font></b> : communication with a lot of databases (with <i>1-1</i>, <i>1-n</i>, <i>n-1</i> and <i>n-n</i> relationships)
+                   </li>
+                   <li><b><font style="background-color:yellow">serialization</font></b> : binary and XML format
+                   </li>
+                   <li><b><font style="background-color:yellow">reflection</font></b> (or <b><font style="background-color:yellow">introspection</font></b>) : access to classes definitions, retrieve properties and call classes methods
+                   </li>
+                 </ul>
+                 <b>QxOrm</b> aims to simplify C++ development and provides a lot of functionalities.<br>
+                 Here is a list of advantages of QxOrm :
+                 <ul>
+                   <li><b>non intrusive</b> : the <i>C++ setting function</i> doesn't modified class definition, QxOrm can be used in existing projects</li>
+                   <li><b>no code generation</b></li>
+                   <li><b>no XML mapping file</b></li>
+                   <li><b>classes doesn't need to inherit from a 'super object'</b></li>
+                   <li><b>template meta-programming</b> : no macro hack</li>
+                   <li>works with <b>Visual C++ 2008 or 2010</b> on Windows, <b>GCC 4.4.1</b> on Linux and Mac OS X, and <b>MinGW</b> on Windows (other platforms will be tested soon : smartphones, etc...)</li>
+                   <li>only one file <i>&lt;QxOrm.h&gt;</i> to include in precompiled-header (need <b>precompiled-header</b> file to reduce compilation times)</li>
+                 </ul>
+              </td>
+              <td width="200" align="center" valign="top"><a href="./resource/qt_ambassador_logo.png" target="_blank"><img alt="qt_ambassador" src="./resource/qt_ambassador_logo_150x150.png" width="150" height="150" border="0"></a><br>
+                 <b><font size="2">QxOrm library has been accepted into the <a href="http://qt.nokia.com/qt-in-use/ambassadors/qtambassador/" target="_blank">Qt Ambassador Program</a></font></b>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        Before you install and compile <b>QxOrm</b>, you need the following libraries : <a href="http://www.boost.org/" target="_blank"><b>boost</b></a> (from version 1.38) and <a href="http://qt.nokia.com/" target="_blank"><b>Qt</b></a> (from version 4.5.0) :
+        <p></p>
+        <table border="0" style="width: 100%" align="center">
+          <col><col>
+          <tbody>
+            <tr>
+              <td valign="middle" width="161" align="center"><a href="http://www.boost.org/" target="_blank"><img alt="boost" src="./resource/logo_boost.jpg" width="161" height="50" border="0"></a></td>
+              <td align="justify"><b>boost</b> : many of boost's founders are on the C++ standard committee and several boost libraries have been accepted for incorporation into C++1x (new standard for the C++ programming language).
+              The boost's libraries are aimed at a wide range of C++ users and application domains.<br>
+              QxOrm uses the following features of boost : <i>smart_pointer, serialization, type_traits, multi_index_container, unordered_container, any, tuple, foreach, function.</i><br>
+              It is recommended to install the latest version of boost available at the following address : <a href="http://www.boost.org/" target="_blank">http://www.boost.org/</a></td>
+            </tr>
+          </tbody>
+        </table>
+        <p></p>
+        <table border="0" style="width: 100%" align="center">
+          <col><col>
+          <tbody>
+            <tr>
+              <td valign="middle" width="161" align="center"><a href="http://qt.nokia.com/" target="_blank"><img alt="Qt" src="./resource/logo_qt.jpg" width="42" height="50" border="0"></a></td>
+              <td align="justify"><b>Qt</b> : cross-platform application development framework : ihm (<i>QtGui</i>), network (<i>QtNetwork</i>), XML (<i>QtXml</i>), database (<i>QtSql</i>)...<br>
+              Qt provides excellent support and documentation. Using Qt, you can write simple and powerful C++ code.<br>
+              Qt is produced by Nokia's Qt Development Frameworks division and is available under LGPL license.<br>
+              QxOrm is compatible with a lot of Qt's objects : <i>QObject, QString, QDate, QTime, QDateTime, QList, QHash, QSharedPointer, QScopedPointer...</i><br>
+              It is recommended to install the latest version of Qt available at the following address : <a href="http://qt.nokia.com/" target="_blank">http://qt.nokia.com/</a></td>
+            </tr>
+          </tbody>
+        </table>
+        <p></p>
+        <p><b>QxOrm</b> contains the following modules :</p> 
+        <ul>
+          <li><p><b><a href="../doxygen/html/group___qx_dao.html" target="_blank">QxDao</a></b> : based on <a href="http://doc.trolltech.com/4.6/sql-programming.html" target="_blank"><i>QtSql</i></a> engine of <b>Qt</b>, this module allows to communicate (select, update, delete, transaction...) with many databases by mapping each field of a table with properties of a C++ class. The relationships <i>1-1</i>, <i>1-n</i>, <i>n-1</i> and <i>n-n</i> are very easy to setup in C++ code. This module supports object-oriented programming : inheritance, polymorphism, modularity. It supports also a lot of containers (<b>stl</b>, <b>boost</b> and <b>Qt</b> : <i>std::vector, std::list, boost::unordered_map, QList, QHash...</i>).</p> 
+          </li>
+          <li><p><b><a href="../doxygen/html/group___qx_register.html" target="_blank">QxRegister</a>, <a href="../doxygen/html/group___qx_data_member.html" target="_blank">QxDataMember</a>, <a href="../doxygen/html/group___qx_factory.html" target="_blank">QxFactory</a> and <a href="../doxygen/html/group___qx_function.html" target="_blank">QxFunction</a></b> : <b>QxOrm</b> emulates <i>reflection</i> (or <i>introspection</i>) mechanism (like other languages : Java, C#...).</p> 
+          </li>
+          <li><p><b><a href="../doxygen/html/group___qx_service.html" target="_blank">QxService</a></b> : based on <a href="http://doc.qt.nokia.com/4.7/qtnetwork.html" target="_blank"><i>QtNetwork</i></a> engine of Qt library, this module provides an easy and powerful way to create <b>C++ application server</b> (<i>services</i> concept with <i>request</i> from client and <i>reply</i> from server). <b>QxService</b> uses <i>serialization</i> and <i>introspection</i> from QxOrm library to transfer over network any class or structure. For more details on <b>QxService</b> module, <b>a tutorial</b> is available <a href="./tutorial_2.html">here</a>.</p>
+          </li>
+          <li><p><b><a href="../doxygen/html/group___qx_collection.html" target="_blank">QxCollection&lt;Key, Value&gt;</a></b> : based on <a href="http://www.boost.org/doc/libs/1_42_0/libs/multi_index/doc/index.html" target="_blank"><i>boost::multi_index_container</i></a>, this collection has advantages of <i>std::vector&lt;T&gt;</i> (insertion order + quick access by index) and <i>boost::unordered_map&lt;Key, Value&gt;</i> or <i>QHash&lt;Key, Value&gt;</i> (quick access by a key : <i>hash-map</i>). <b>QxCollection&lt;Key, Value&gt;</b> is adapted to contain the elements resulting from a database.</p> 
+          </li>
+          <li><p><b><a href="../doxygen/html/group___qx_serialize.html" target="_blank">QxSerialize</a></b> : this module is based on the excellent library <a href="http://www.boost.org/doc/libs/1_42_0/libs/serialization/doc/index.html" target="_blank"><i>boost::serialization</i></a>. Any class defined by QxOrm can be serialize into binary and XML format. This module also allows to clone all instances of objects. Most of Qt objects (<i>QObject, QString, QDate, QTime, QDateTime, QList, QHash...</i>) are compatible with <i>QxSerialize</i> module.</p> 
+          </li>
+          <li><p><b><a href="../doxygen/html/group___qx_traits.html" target="_blank">QxTraits</a></b> : boost library provides a lot of generic traits. QxOrm uses them but needs new functionalities that are not present in boost.</p> 
+          </li>
+          <li><p><b><a href="../doxygen/html/group___qx_cache.html" target="_blank">QxCache</a></b> : QxOrm's cache can contain all types of objects. It can make it possible for example to memorize data resulting from a database to avoid too frequent requests. This cache is generic and can be used in other contexts than QxOrm.</p> 
+          </li>
+          <li><p><b><a href="../doxygen/html/group___qx_validator.html" target="_blank">QxValidator</a></b> : this module provides a validation engine for classes registered into QxOrm context. To use this validation engine, you have to define your constraints into the mapping function per class : <i>void qx::register_class</i>. If for an instance of class, at least one constraint violation is detected, then the instance is invalid : the object cannot be saved into database (<i>INSERT</i> or <i>UPDATE</i>). For more informations about <i>QxValidator</i> module, <a href="./faq.html#faq_250">goto the FAQ of QxOrm library</a>.</p> 
+          </li>
+          <li><p><b><a href="../doxygen/html/group___qx_mem_leak.html" target="_blank">QxMemLeak</a></b> : fast detection of memory leaks in <i>Debug</i> mode (with indication of the file and the line =&gt; style MFC from Microsoft). This module is developed by <a href="http://wyw.dcweb.cn/leakage.htm" target="_blank">Wu Yongwei</a>. If another tool is already used in your projects (<i>Valgrind</i> for example), this functionality should not be activated. By default, <i>QxMemLeak</i> module is disabled.</p> 
+          </li>
+        </ul>
+        <p></p>
+        <p>You can download the last version of <b>QxOrm</b> <a href="./download.html">by clicking here</a>.
+        <br> A quick sample showing the basic functionalities of <b>QxOrm</b> is available <a href="./quick_sample.html">by clicking here</a>.
+        <br> A forum is available <a href="http://sourceforge.net/apps/phpbb/qxorm/" target="_blank">by clicking here</a>.<br> 
+        <br>
+        For information and in order to be able to make a comparison, here a list of other C++ ORM libraries :</p> 
+        <ul>
+          <li><i>DTL</i> : <a href="http://dtemplatelib.sourceforge.net/"
+            target="_blank">http://dtemplatelib.sourceforge.net/</a>
+          </li>
+          <li><i>SOCI</i> : <a href="http://soci.sourceforge.net/"
+            target="_blank">http://soci.sourceforge.net/</a>
+          </li>
+          <li><i>Hiberlite</i> : <a href="http://code.google.com/p/hiberlite/"
+            target="_blank">http://code.google.com/p/hiberlite/</a>
+          </li>
+          <li><i>LiteSQL</i> : <a href="http://sourceforge.net/apps/trac/litesql/"
+            target="_blank">http://sourceforge.net/apps/trac/litesql/</a>
+          </li>
+          <li><i>Debea</i> : <a href="http://debea.net/"
+            target="_blank">http://debea.net/</a>
+          </li>
+          <li><i>Wt::Dbo</i> : <a
+            href="http://www.webtoolkit.eu/wt/doc/tutorial/dbo/tutorial.html"
+            target="_blank">http://www.webtoolkit.eu/wt/doc/tutorial/dbo/tutorial.html</a>
+          </li>
+          <li><i>QDjango</i> : <a
+            href="http://opensource.bolloretelecom.eu/projects/qdjango/"
+            target="_blank">http://opensource.bolloretelecom.eu/projects/qdjango/</a>
+          </li>
+          <li><i>QtPersistence</i> : <a
+            href="http://sourceforge.net/projects/qtpersistence/"
+            target="_blank">http://sourceforge.net/projects/qtpersistence/</a>
+          </li>
+          <li><i>QsT SQL Tools</i> : <a
+            href="http://sourceforge.net/projects/qstsqltools/"
+            target="_blank">http://sourceforge.net/projects/qstsqltools/</a>
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br><hr style="width: 80%" align="center" size="1" color="#100D5A">
+<table border="0" style="width: 80%" align="center">
+  <col><col>
+  <tbody>
+    <tr>
+      <td align="left" valign="middle"><img alt="QxOrm"
+        src="./resource/logo_qxorm_small.jpg" width="168" height="40"></td>
+      <td align="right" valign="middle"><font size="2"></font> </td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>
