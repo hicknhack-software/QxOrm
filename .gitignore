@@ -11,3 +11,14 @@
 *.lai
 *.la
 *.a
+
+# Windows
+*.dll
+*.exe
+*.lib
+*.ilk
+*.pdb
+*.exp
+*.obj
+*.suo
+*.user
