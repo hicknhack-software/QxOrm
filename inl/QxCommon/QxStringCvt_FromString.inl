@@ -53,7 +53,7 @@ static inline qx_bool fromString(const QString & s, QDateTime & t, const QString
 
 template <> struct QxStringCvt_FromString< QByteArray > {
 static inline qx_bool fromString(const QString & s, QByteArray & t, const QString & format, int index)
-{ Q_UNUSED(format); Q_UNUSED(index); t = s.toAscii(); return qx_bool(true); } };
+{ Q_UNUSED(format); Q_UNUSED(index); t = s.toLatin1(); return qx_bool(true); } };
 
 template <> struct QxStringCvt_FromString< QVariant > {
 static inline qx_bool fromString(const QString & s, QVariant & t, const QString & format, int index)
@@ -69,7 +69,7 @@ static inline qx_bool fromString(const QString & s, bool & t, const QString & fo
 
 template <> struct QxStringCvt_FromString< char > {
 static inline qx_bool fromString(const QString & s, char & t, const QString & format, int index)
-{ Q_UNUSED(format); Q_UNUSED(index); t = (s.isEmpty() ? ' ' : s.toAscii().at(0)); return (! s.isEmpty()); } };
+{ Q_UNUSED(format); Q_UNUSED(index); t = (s.isEmpty() ? ' ' : s.toLatin1().at(0)); return (! s.isEmpty()); } };
 
 template <> struct QxStringCvt_FromString< short > {
 static inline qx_bool fromString(const QString & s, short & t, const QString & format, int index)

@@ -21,4 +21,4 @@
 *.exp
 *.obj
 *.suo
-*.user
+*.user*

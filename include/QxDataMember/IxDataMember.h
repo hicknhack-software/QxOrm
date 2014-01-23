@@ -297,7 +297,7 @@ private:
    {
       QString sNamePtr = (m_sName.isEmpty() ? m_sKey : m_sName);
       sNamePtr.replace("|", "-"); // valid xml tag
-      m_byteName = sNamePtr.toAscii();
+      m_byteName = sNamePtr.toLatin1();
       m_pName = m_byteName.constData();
       m_lstNames = (m_sName.isEmpty() ? m_sKey.split("|") : m_sName.split("|"));
    }

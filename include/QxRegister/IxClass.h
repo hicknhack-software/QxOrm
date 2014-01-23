@@ -116,7 +116,7 @@ public:
 
 private:
 
-   inline void updateNamePtr()   { m_byteName = m_sName.toAscii(); m_pName = m_byteName.constData(); }
+   inline void updateNamePtr()   { m_byteName = m_sName.toLatin1(); m_pName = m_byteName.constData(); }
 
 };
 
