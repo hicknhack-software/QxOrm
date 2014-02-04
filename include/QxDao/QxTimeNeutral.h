@@ -37,8 +37,10 @@
  * \brief Helper class to store a time value into database under neutral format (HHMMSS) => cross database compatibility
  */
 
+#ifndef Q_MOC_RUN
 #include <boost/serialization/serialization.hpp>
 #include <boost/serialization/nvp.hpp>
+#endif
 
 #include <QtCore/qdatetime.h>
 

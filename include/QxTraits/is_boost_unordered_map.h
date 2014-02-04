@@ -37,9 +37,11 @@
  * \brief qx::trait::is_boost_unordered_map<T>::value : return true if T is a boost::unordered_map<> or boost::unordered_multimap<> container, otherwise return false
  */
 
+#ifndef Q_MOC_RUN
 #include <boost/unordered_map.hpp>
 #include <boost/mpl/if.hpp>
 #include <boost/mpl/logical.hpp>
+#endif
 
 namespace qx {
 namespace trait {
@@ -63,8 +65,8 @@ public:
 
    enum { value = (sizeof(qx::trait::is_boost_unordered_map<T>::isContainer(t)) == sizeof(char)) };
 
-   typedef typename boost::mpl::if_c<qx::trait::is_boost_unordered_map<T>::value, 
-                                     boost::mpl::true_, 
+   typedef typename boost::mpl::if_c<qx::trait::is_boost_unordered_map<T>::value,
+                                     boost::mpl::true_,
                                      boost::mpl::false_>::type type;
 
 };

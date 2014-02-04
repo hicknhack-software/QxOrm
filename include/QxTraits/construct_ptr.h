@@ -37,11 +37,13 @@
  * \brief qx::trait::construct_ptr<T>::get(T & t) : instantiate a new pointer, support both nude-pointer and smart-pointer of boost, Qt and QxOrm libraries
  */
 
+#ifndef Q_MOC_RUN
 #include <boost/scoped_ptr.hpp>
 #include <boost/shared_ptr.hpp>
 #include <boost/intrusive_ptr.hpp>
 #include <boost/type_traits/is_abstract.hpp>
 #include <boost/type_traits/remove_pointer.hpp>
+#endif
 
 #include <QtCore/qsharedpointer.h>
 

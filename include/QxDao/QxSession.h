@@ -37,8 +37,10 @@
  * \brief Define a session to manage automatically database transactions (using C++ RAII)
  */
 
+#ifndef Q_MOC_RUN
 #include <boost/noncopyable.hpp>
 #include <boost/shared_ptr.hpp>
+#endif
 
 #include <QtSql/qsqldatabase.h>
 #include <QtSql/qsqlquery.h>

@@ -39,8 +39,10 @@
 
 #include <QtCore/QSharedDataPointer>
 
+#ifndef Q_MOC_RUN
 #include <boost/mpl/if.hpp>
 #include <boost/mpl/logical.hpp>
+#endif
 
 namespace qx {
 namespace trait {
@@ -63,8 +65,8 @@ public:
 
    enum { value = (sizeof(qx::trait::is_qt_shared_data_ptr<T>::isSmartPtr(t)) == sizeof(char)) };
 
-   typedef typename boost::mpl::if_c<qx::trait::is_qt_shared_data_ptr<T>::value, 
-                                     boost::mpl::true_, 
+   typedef typename boost::mpl::if_c<qx::trait::is_qt_shared_data_ptr<T>::value,
+                                     boost::mpl::true_,
                                      boost::mpl::false_>::type type;
 
 };

@@ -30,8 +30,10 @@
 #pragma once
 #endif
 
+#ifndef Q_MOC_RUN
 #include <boost/type_traits/is_same.hpp>
 #include <boost/serialization/void_cast.hpp>
+#endif
 
 #include <QxTraits/get_base_class.h>
 

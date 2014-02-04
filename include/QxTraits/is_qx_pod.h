@@ -37,11 +37,13 @@
  * \brief qx::trait::is_qx_pod<T>::value : return true if T is a POD type and not a pointer
  */
 
+#ifndef Q_MOC_RUN
 #include <boost/mpl/if.hpp>
 #include <boost/mpl/logical.hpp>
 #include <boost/type_traits/is_pod.hpp>
 #include <boost/type_traits/is_pointer.hpp>
 #include <boost/type_traits/is_member_pointer.hpp>
+#endif
 
 namespace qx {
 namespace trait {

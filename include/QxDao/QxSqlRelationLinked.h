@@ -37,9 +37,11 @@
  * \brief Hierarchy of relationships to build SQL query
  */
 
+#ifndef Q_MOC_RUN
 #include <boost/tuple/tuple.hpp>
 #include <boost/tuple/tuple_comparison.hpp>
 #include <boost/tuple/tuple_io.hpp>
+#endif
 
 #include <QtSql/qsqlerror.h>
 

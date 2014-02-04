@@ -25,7 +25,9 @@
 
 #include <QxPrecompiled.h>
 
+#ifndef Q_MOC_RUN
 #include <boost/static_assert.hpp>
+#endif
 
 #include <QxTraits/is_container.h>
 #include <QxTraits/is_container_base_of.h>

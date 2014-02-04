@@ -37,9 +37,11 @@
  * \brief Define a user SQL query added to default SQL query builded by QxOrm library, and used by qx::dao::xxx functions to filter elements fetched from database
  */
 
+#ifndef Q_MOC_RUN
 #include <boost/tuple/tuple.hpp>
 #include <boost/tuple/tuple_comparison.hpp>
 #include <boost/tuple/tuple_io.hpp>
+#endif
 
 #include <QtSql/qsqlquery.h>
 
@@ -113,14 +115,14 @@ query.where("sex").isEqualTo(author::female)
  *
  * This code will produce following SQL for <i>MySQL</i>, <i>PostgreSQL</i> and <i>SQLite</i> databases (for <i>Oracle</i> and <i>SQLServer</i>, there is a specific process for <i>limit()</i> method) :
  * \code
-WHERE sex = :sex_1_0 
-AND age > :age_3_0 
-OR last_name <> :last_name_5_0 
-OR first_name LIKE :first_name_7_0 
-AND ( id <= :id_10_0 AND birth_date BETWEEN :birth_date_12_0_1 AND :birth_date_12_0_2 ) 
-OR id IN (:id_15_0_0, :id_15_0_1, :id_15_0_2, :id_15_0_3, :id_15_0_4) 
-AND is_deleted IS NOT NULL 
-ORDER BY last_name ASC, first_name ASC, sex ASC 
+WHERE sex = :sex_1_0
+AND age > :age_3_0
+OR last_name <> :last_name_5_0
+OR first_name LIKE :first_name_7_0
+AND ( id <= :id_10_0 AND birth_date BETWEEN :birth_date_12_0_1 AND :birth_date_12_0_2 )
+OR id IN (:id_15_0_0, :id_15_0_1, :id_15_0_2, :id_15_0_3, :id_15_0_4)
+AND is_deleted IS NOT NULL
+ORDER BY last_name ASC, first_name ASC, sex ASC
 LIMIT :limit_rows_count_19_0 OFFSET :offset_start_row_19_0
  * \endcode
  *

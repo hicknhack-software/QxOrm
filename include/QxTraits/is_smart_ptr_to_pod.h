@@ -37,8 +37,10 @@
  * \brief qx::trait::is_smart_ptr_to_pod<T>::value : return true if T is a smart-pointer of boost, Qt or QxOrm libraries and (*T) is a POD type (char, int, long, etc.), otherwise return false
  */
 
+#ifndef Q_MOC_RUN
 #include <boost/mpl/if.hpp>
 #include <boost/mpl/logical.hpp>
+#endif
 
 #include <QxTraits/is_smart_ptr.h>
 #include <QxTraits/is_qx_pod.h>

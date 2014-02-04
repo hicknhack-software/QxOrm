@@ -37,7 +37,9 @@
  * \brief Used by introspection engine (IxClass, IxDataMember, IxFunction, etc.) to add meta-data (property bag)
  */
 
+#ifndef Q_MOC_RUN
 #include <boost/shared_ptr.hpp>
+#endif
 
 #include <QtCore/qhash.h>
 #include <QtCore/qstring.h>

@@ -49,7 +49,9 @@
 #if _QX_USE_MODIFY_BOOST_SERIALIZATION_EXPORT_HPP
 #include <QxSerialize/boost/class_export/qx_boost_class_export.h>
 #else
+#ifndef Q_MOC_RUN
 #include <boost/serialization/export.hpp>
+#endif
 #endif // _QX_USE_MODIFY_BOOST_SERIALIZATION_EXPORT_HPP
 #endif // _QX_INCLUDE_BOOST_SERIALIZE_EXPORT_HPP_INTO_QX_MEM_LEAK_HPP
 

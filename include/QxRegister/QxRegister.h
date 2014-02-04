@@ -43,9 +43,11 @@
 #pragma warning(disable:4094)
 #endif // _MSC_VER
 
+#ifndef Q_MOC_RUN
 #include <boost/mpl/if.hpp>
 #include <boost/mpl/logical.hpp>
 #include <boost/static_assert.hpp>
+#endif
 
 #include <QxCommon/QxConfig.h>
 #include <QxCommon/QxMacro.h>

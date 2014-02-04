@@ -43,11 +43,13 @@
 #pragma warning(disable:4503)
 #endif // _MSC_VER
 
+#ifndef Q_MOC_RUN
 #include <boost/multi_index_container.hpp>
 #include <boost/multi_index/member.hpp>
 #include <boost/multi_index/random_access_index.hpp>
 #include <boost/multi_index/hashed_index.hpp>
 #include <boost/type_traits/is_pointer.hpp>
+#endif
 
 #include <QtCore/qpair.h>
 

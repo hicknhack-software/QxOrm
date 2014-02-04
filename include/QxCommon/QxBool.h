@@ -37,8 +37,10 @@
  * \brief qx_bool : QxOrm library boolean type with code and description message when an error occured
  */
 
+#ifndef Q_MOC_RUN
 #include <boost/serialization/serialization.hpp>
 #include <boost/serialization/nvp.hpp>
+#endif
 
 #include <QxSerialize/Qt/QxSerialize_QString.h>
 

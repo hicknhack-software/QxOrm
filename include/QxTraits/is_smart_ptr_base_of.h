@@ -37,9 +37,11 @@
  * \brief qx::trait::is_smart_ptr_base_of<B, D>::value : return true if B and D are smart-pointers of boost, Qt or QxOrm libraries and if (*B) is a base class of (*D), otherwise return false
  */
 
+#ifndef Q_MOC_RUN
 #include <boost/mpl/if.hpp>
 #include <boost/mpl/logical.hpp>
 #include <boost/type_traits/is_base_of.hpp>
+#endif
 
 #include <QxTraits/is_smart_ptr.h>
 

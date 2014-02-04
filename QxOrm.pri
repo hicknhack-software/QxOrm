@@ -96,6 +96,8 @@ DEFINES += NDEBUG
 win32-msvc2005: QMAKE_LFLAGS += /OPT:NOREF
 win32-msvc2008: QMAKE_LFLAGS += /OPT:NOREF
 win32-msvc2010: QMAKE_LFLAGS += /OPT:NOREF
+win32-msvc2012: QMAKE_LFLAGS += /OPT:NOREF
+win32-msvc2013: QMAKE_LFLAGS += /OPT:NOREF
 } # CONFIG(debug, debug|release)
 win32-g++: QMAKE_LFLAGS += -export-all-symbols
 } # win32

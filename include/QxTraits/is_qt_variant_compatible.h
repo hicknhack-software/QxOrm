@@ -37,7 +37,9 @@
  * \brief qx::trait::is_qt_variant_compatible<T>::value : return true if T can be host into a QVariant object of Qt library, otherwise return false
  */
 
+#ifndef Q_MOC_RUN
 #include <boost/type_traits/is_enum.hpp>
+#endif
 
 #include <QtCore/qvariant.h>
 

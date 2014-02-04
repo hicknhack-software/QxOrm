@@ -37,7 +37,9 @@
  * \brief Common interface for all QxOrm containers qx::QxCollection<Key, Value>
  */
 
+#ifndef Q_MOC_RUN
 #include <boost/any.hpp>
+#endif
 
 #include <QxTraits/get_class_name.h>
 

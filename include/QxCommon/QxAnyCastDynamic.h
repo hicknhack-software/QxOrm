@@ -37,8 +37,10 @@
  * \brief qx::any_cast_dynamic<T>::get() : provides a tool to use boost::any_cast and polymorphism
  */
 
+#ifndef Q_MOC_RUN
 #include <boost/any.hpp>
 #include <boost/shared_ptr.hpp>
+#endif
 
 #include <QtCore/qsharedpointer.h>
 

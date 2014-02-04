@@ -37,8 +37,10 @@
  * \brief Concrete list of class properties registered into QxOrm context
  */
 
+#ifndef Q_MOC_RUN
 #include <boost/type_traits/is_integral.hpp>
 #include <boost/type_traits/is_base_of.hpp>
+#endif
 
 #include <QxDataMember/IxDataMemberX.h>
 #include <QxDataMember/QxDataMember.h>

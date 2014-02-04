@@ -38,15 +38,19 @@
 #endif // _MSC_VER
 
 #if _QX_SUPPORT_BOOST_SERIALIZE_SHARED_PTR_132
+#ifndef Q_MOC_RUN
 #include <boost/serialization/shared_ptr_132.hpp>
+#endif
 #else // _QX_SUPPORT_BOOST_SERIALIZE_SHARED_PTR_132
 #ifdef BOOST_SERIALIZATION_SHARED_PTR_132_HPP
 #undef BOOST_SERIALIZATION_SHARED_PTR_132_HPP
 #endif // BOOST_SERIALIZATION_SHARED_PTR_132_HPP
 #endif // _QX_SUPPORT_BOOST_SERIALIZE_SHARED_PTR_132
 
+#ifndef Q_MOC_RUN
 #include <boost/serialization/shared_ptr.hpp>
 #include <boost/serialization/weak_ptr.hpp>
+#endif
 
 #ifdef _MSC_VER
 #pragma warning(pop)

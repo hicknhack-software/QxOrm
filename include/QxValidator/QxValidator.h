@@ -37,7 +37,9 @@
  * \brief Concrete class for a custom or recursive validator
  */
 
+#ifndef Q_MOC_RUN
 #include <boost/function.hpp>
+#endif
 
 #include <QxValidator/IxValidator.h>
 #include <QxValidator/QxInvalidValueX.h>

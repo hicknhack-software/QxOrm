@@ -37,7 +37,9 @@
  * \brief Common interface for all singleton of QxOrm library
  */
 
+#ifndef Q_MOC_RUN
 #include <boost/noncopyable.hpp>
+#endif
 
 namespace qx {
 

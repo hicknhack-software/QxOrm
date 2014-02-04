@@ -37,7 +37,9 @@
  * \brief Register automatically Qt meta-property defined with Q_PROPERTY() macro into QxOrm context
  */
 
+#ifndef Q_MOC_RUN
 #include <boost/static_assert.hpp>
+#endif
 
 #include <QtCore/qmetaobject.h>
 #include <QtCore/qmetatype.h>

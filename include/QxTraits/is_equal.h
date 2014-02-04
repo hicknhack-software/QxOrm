@@ -39,8 +39,10 @@
 
 #include <string>
 
+#ifndef Q_MOC_RUN
 #include <boost/shared_ptr.hpp>
 #include <boost/type_traits/is_pointer.hpp>
+#endif
 
 #include <QtCore/qstring.h>
 #include <QtCore/qdatetime.h>

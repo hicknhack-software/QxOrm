@@ -42,7 +42,9 @@
 #pragma warning(disable:4996)
 #endif // _MSC_VER
 
+#ifndef Q_MOC_RUN
 #include <boost/any.hpp>
+#endif
 
 #include <QxCommon/QxBool.h>
 #include <QxCommon/QxPropertyBag.h>

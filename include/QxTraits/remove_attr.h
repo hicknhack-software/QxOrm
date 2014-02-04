@@ -37,13 +37,17 @@
  * \brief qx::trait::remove_attr<T>::type : return a type without pointer, const, reference and/or volatile attributes
  */
 
+#ifndef Q_MOC_RUN
 #include <boost/mpl/if.hpp>
 #include <boost/mpl/logical.hpp>
+#endif
 
+#ifndef Q_MOC_RUN
 #include <boost/type_traits/remove_pointer.hpp>
 #include <boost/type_traits/remove_const.hpp>
 #include <boost/type_traits/remove_reference.hpp>
 #include <boost/type_traits/remove_volatile.hpp>
+#endif
 
 namespace qx {
 namespace trait {

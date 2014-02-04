@@ -15,7 +15,7 @@
  * Based on the portable archive example by Robert Ramey this implementation
  * uses Beman Dawes endian library and fp_utilities from Johan Rade, both being
  * in boost since 1.36. Prior to that you need to add them both (header only)
- * to your boost directory before you're able to use the archives provided. 
+ * to your boost directory before you're able to use the archives provided.
  * Our archives have been tested successfully for boost versions 1.33 to 1.38!
  *
  * \note Correct behaviour has so far been confirmed using PowerPC-32, x86-32
@@ -76,17 +76,23 @@
 #include <ostream>
 
 // basic headers
+#ifndef Q_MOC_RUN
 #include <boost/version.hpp>
 #include <boost/utility/enable_if.hpp>
 #include <boost/archive/binary_oarchive.hpp>
+#endif
 
 // endian and fpclassify
 #if BOOST_VERSION < 103600
+#ifndef Q_MOC_RUN
 #include <boost/integer/endian.hpp>
 #include <boost/math/fpclassify.hpp>
+#endif
 #else
+#ifndef Q_MOC_RUN
 #include <boost/spirit/home/support/detail/integer/endian.hpp>
 #include <boost/spirit/home/support/detail/math/fpclassify.hpp>
+#endif
 #endif
 
 // namespace alias
@@ -97,10 +103,12 @@ namespace fp = boost::spirit::math;
 #endif
 
 // generic type traits for numeric types
+#ifndef Q_MOC_RUN
 #include <boost/type_traits/is_integral.hpp>
 #include <boost/type_traits/is_signed.hpp>
 #include <boost/type_traits/is_arithmetic.hpp>
 #include <boost/type_traits/is_floating_point.hpp>
+#endif
 
 #include "portable_archive_exception.hpp"
 
@@ -119,7 +127,7 @@ namespace eos {
    typedef boost::archive::binary_oarchive_impl<
       portable_oarchive
       #if BOOST_VERSION >= 103400
-         , std::ostream::char_type 
+         , std::ostream::char_type
          , std::ostream::traits_type
       #endif
    > portable_oarchive_base;
@@ -150,23 +158,23 @@ namespace eos {
       template<int> struct dummy { dummy(int) {}};
 
       // stores a signed char directly to stream
-      void save_signed_char(const signed char& c) 
-      { 
-         portable_oarchive_base::save(c); 
+      void save_signed_char(const signed char& c)
+      {
+         portable_oarchive_base::save(c);
       }
 
    public:
 
       //! Default fall through for non-arithmetic types (ie. strings)
       template<class T>
-      typename boost::disable_if<boost::is_arithmetic<T> >::type 
+      typename boost::disable_if<boost::is_arithmetic<T> >::type
       save(const T & t, dummy<1> = 0)
       {
          portable_oarchive_base::save(t);
       }
 
       //! Saving bool directly
-      void save(const bool& b) 
+      void save(const bool& b)
       {
          save_signed_char(b);
          if (b) save_signed_char('T');
@@ -188,7 +196,7 @@ namespace eos {
             // examine the number of bytes
             // needed to represent the number
             signed char size = 0;
-            do { temp >>= CHAR_BIT; ++size; } 
+            do { temp >>= CHAR_BIT; ++size; }
             while (temp != 0 && temp != (T) -1);
 
             // encode the sign bit into the size
@@ -206,28 +214,28 @@ namespace eos {
 
       /**
       * \brief Save floating point types.
-      * 
+      *
       * We simply rely on fp_traits to extract the bit pattern into an (unsigned)
       * integral type and store that into the stream.
       *
       * \note by Johan Rade (author of the floating point utilities library):
-      * Be warned that the math::detail::fp_traits<T>::type::get_bits() function 
+      * Be warned that the math::detail::fp_traits<T>::type::get_bits() function
       * is *not* guaranteed to give you all bits of the floating point number. It
       * will give you all bits if and only if there is an integer type that has
       * the same size as the floating point you are copying from. It will not
       * give you all bits for double if there is no uint64_t. It will not give
       * you all bits for long double if sizeof(long double) > 8 or there is no
-      * uint64_t. 
-      * 
+      * uint64_t.
+      *
       * The member fp_traits<T>::type::coverage will tell you whether all bits
       * are copied. This is a typedef for either math::detail::all_bits or
-      * math::detail::not_all_bits. 
-      * 
+      * math::detail::not_all_bits.
+      *
       * If the function does not copy all bits, then it will copy the most
       * significant bits. So if you serialize and deserialize the way you
       * describe, and fp_traits<T>::type::coverage is math::detail::not_all_bits,
       * then your floating point numbers will be truncated. This will introduce
-      * small rounding off errors. 
+      * small rounding off errors.
       *
       * \note treat nan values using fpclassify
       */
@@ -244,7 +252,7 @@ namespace eos {
          // 1. you're serializing a long double which is not portable
          // 2. you're serializing a double but have no 64 bit integer
          // 3. your machine is using an unknown floating point format
-         // after reading the note above you still might decide to 
+         // after reading the note above you still might decide to
          // deactivate this static assert and try if it works out.
          typename traits::bits bits;
          BOOST_STATIC_ASSERT(sizeof(bits) == sizeof(T));
@@ -259,7 +267,7 @@ namespace eos {
          // the base class constructor calls basic_binary_oarchive::init
          // but also basic_binary_oprimitive::init which stores type sizes
          // for comparison when loading them on a different platform
-         : portable_oarchive_base(os, flags | boost::archive::no_header) 
+         : portable_oarchive_base(os, flags | boost::archive::no_header)
       {
          // it is vital to have version information if the archive is
          // to be parsed with a newer version of boost::serialization

@@ -30,8 +30,10 @@
 #pragma once
 #endif
 
+#ifndef Q_MOC_RUN
 #include <boost/mpl/if.hpp>
 #include <boost/mpl/logical.hpp>
+#endif
 
 #include <QxTraits/is_container.h>
 #include <QxTraits/is_qx_pod.h>

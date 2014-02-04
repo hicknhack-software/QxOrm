@@ -37,7 +37,9 @@
  * \brief Java-style iterator to iterate over a qx::QxCollection<Key, Value> container
  */
 
+#ifndef Q_MOC_RUN
 #include <boost/noncopyable.hpp>
+#endif
 
 #include <QxCollection/QxCollection.h>
 

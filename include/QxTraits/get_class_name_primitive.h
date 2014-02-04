@@ -43,12 +43,14 @@
 #include <map>
 #include <set>
 
+#ifndef Q_MOC_RUN
 #include <boost/scoped_ptr.hpp>
 #include <boost/shared_ptr.hpp>
 #include <boost/unordered_map.hpp>
 #include <boost/unordered_set.hpp>
 #include <boost/optional.hpp>
 #include <boost/tuple/tuple.hpp>
+#endif
 
 #include <QtCore/qobject.h>
 #include <QtCore/qstring.h>

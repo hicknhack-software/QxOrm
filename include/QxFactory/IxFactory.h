@@ -39,8 +39,10 @@
 
 #include <typeinfo>
 
+#ifndef Q_MOC_RUN
 #include <boost/noncopyable.hpp>
 #include <boost/any.hpp>
+#endif
 
 namespace qx {
 

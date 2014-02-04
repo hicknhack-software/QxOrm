@@ -39,8 +39,10 @@
 
 #include <vector>
 
+#ifndef Q_MOC_RUN
 #include <boost/mpl/if.hpp>
 #include <boost/mpl/logical.hpp>
+#endif
 
 namespace qx {
 namespace trait {
@@ -63,8 +65,8 @@ public:
 
    enum { value = (sizeof(qx::trait::is_std_vector<T>::isContainer(t)) == sizeof(char)) };
 
-   typedef typename boost::mpl::if_c<qx::trait::is_std_vector<T>::value, 
-                                     boost::mpl::true_, 
+   typedef typename boost::mpl::if_c<qx::trait::is_std_vector<T>::value,
+                                     boost::mpl::true_,
                                      boost::mpl::false_>::type type;
 
 };

@@ -37,9 +37,11 @@
  * \brief qx::trait::remove_smart_ptr<T>::type : return a type without smart-pointer attribute from boost, Qt or QxOrm library
  */
 
+#ifndef Q_MOC_RUN
 #include <boost/scoped_ptr.hpp>
 #include <boost/shared_ptr.hpp>
 #include <boost/intrusive_ptr.hpp>
+#endif
 
 #include <QtCore/qsharedpointer.h>
 
