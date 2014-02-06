@@ -37,9 +37,7 @@
  * \brief qx::trait::generic_container<T> : provide some tools to manage all containers without knowing its type
  */
 
-#ifndef Q_MOC_RUN
 #include <boost/type_traits/is_pointer.hpp>
-#endif
 
 #include <QxTraits/is_smart_ptr.h>
 #include <QxTraits/remove_attr.h>

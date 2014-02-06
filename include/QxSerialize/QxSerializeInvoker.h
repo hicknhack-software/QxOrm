@@ -36,17 +36,13 @@
 #pragma warning(disable:4094)
 #endif // _MSC_VER
 
-#ifndef Q_MOC_RUN
 #include <boost/mpl/if.hpp>
 #include <boost/mpl/logical.hpp>
 #include <boost/static_assert.hpp>
-#endif
 
-#ifndef Q_MOC_RUN
 #include <boost/serialization/serialization.hpp>
 #include <boost/serialization/base_object.hpp>
 #include <boost/serialization/nvp.hpp>
-#endif
 
 #include <QxTraits/get_base_class.h>
 #include <QxTraits/is_qx_registered.h>

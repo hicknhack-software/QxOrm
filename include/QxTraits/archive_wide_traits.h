@@ -42,10 +42,8 @@
 #include <sstream>
 #include <fstream>
 
-#ifndef Q_MOC_RUN
 #include <boost/mpl/if.hpp>
 #include <boost/mpl/logical.hpp>
-#endif
 
 #include <QtCore/qstring.h>
 

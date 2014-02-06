@@ -6,11 +6,9 @@
 #pragma once
 #endif // _MSC_VER
 
-#ifndef Q_MOC_RUN
 #include <boost/lexical_cast.hpp>
 #include <boost/archive/basic_archive.hpp>
 #include <boost/archive/archive_exception.hpp>
-#endif
 
 namespace eos {
 
@@ -30,9 +28,9 @@ namespace eos {
    * \brief Exception being thrown when serialization cannot proceed.
    *
    * There are several situations in which the portable archives must fail and
-   * hence throw an exception:
-   * -# deserialization of an integer value that exceeds the range of the type
-   * -# serialization of special floating point values nan or inf
+   * hence throw an exception: 
+   * -# deserialization of an integer value that exceeds the range of the type 
+   * -# serialization of special floating point values nan or inf 
    * -# deserialization of a denormalized value without the floating point type
    *    supporting denormalized numbers
    *
@@ -56,7 +54,7 @@ namespace eos {
       portable_archive_exception() : boost::archive::archive_exception(other_exception), msg("cannot read a negative number into an unsigned type") { ; }
 
       //! serialization of inf, nan and denormals
-      template <typename T>
+      template <typename T> 
       portable_archive_exception(const T& abnormal) : boost::archive::archive_exception(other_exception), msg("serialization of non-portable floating point value: ")
       {
          msg += boost::lexical_cast<std::string>(abnormal);

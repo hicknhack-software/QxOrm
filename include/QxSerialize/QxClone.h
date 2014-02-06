@@ -42,9 +42,7 @@
 #include <sstream>
 #include <exception>
 
-#ifndef Q_MOC_RUN
 #include <boost/archive/archive_exception.hpp>
-#endif
 
 #include <QxSerialize/boost/QxSerializeInclude.h>
 #include <QxSerialize/QxBoostSerializeHelper/QxBoostSerializeRegisterHelperX.h>

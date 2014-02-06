@@ -30,9 +30,7 @@
 #pragma once
 #endif
 
-#ifndef Q_MOC_RUN
 #include <boost/noncopyable.hpp>
-#endif
 
 #include <QxCommon/QxConfig.h>
 

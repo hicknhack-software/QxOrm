@@ -37,34 +37,26 @@
 #include <utility>
 #include <cstddef> // NULL
 
-#ifndef Q_MOC_RUN
 #include <boost/config.hpp>
 #include <boost/static_assert.hpp>
 #include <boost/preprocessor/stringize.hpp>
 #include <boost/type_traits/is_polymorphic.hpp>
-#endif
 
-#ifndef BOOST_SERIALIZATION_DEFAULT_TYPE_INFO
-#ifndef Q_MOC_RUN
-    #include <boost/serialization/extended_type_info_typeid.hpp>
-#endif
+#ifndef BOOST_SERIALIZATION_DEFAULT_TYPE_INFO   
+    #include <boost/serialization/extended_type_info_typeid.hpp>   
 #endif // BOOST_SERIALIZATION_DEFAULT_TYPE_INFO
 
-#ifndef Q_MOC_RUN
 #include <boost/serialization/static_warning.hpp>
 #include <boost/serialization/type_info_implementation.hpp>
 #include <boost/serialization/assume_abstract.hpp>
 #include <boost/serialization/force_include.hpp>
 #include <boost/serialization/singleton.hpp>
-#endif
 
-#ifndef Q_MOC_RUN
 #include <boost/archive/detail/register_archive.hpp>
 #include <boost/mpl/assert.hpp>
 #include <boost/mpl/and.hpp>
 #include <boost/mpl/not.hpp>
 #include <boost/mpl/bool.hpp>
-#endif
 
 #include <iostream>
 
@@ -86,14 +78,14 @@ struct export_impl
     static const basic_pointer_iserializer &
     enable_load(mpl::true_){
         return boost::serialization::singleton<
-            pointer_iserializer<Archive, Serializable>
+            pointer_iserializer<Archive, Serializable> 
         >::get_const_instance();
     }
 
     static const basic_pointer_oserializer &
     enable_save(mpl::true_){
         return boost::serialization::singleton<
-            pointer_oserializer<Archive, Serializable>
+            pointer_oserializer<Archive, Serializable> 
         >::get_const_instance();
     }
     inline static void enable_load(mpl::false_) {}
@@ -110,7 +102,7 @@ struct ptr_serialization_support
 {
 # if defined(BOOST_MSVC)
     virtual BOOST_DLLEXPORT void instantiate() BOOST_USED;
-# elif defined(__BORLANDC__)
+# elif defined(__BORLANDC__)   
     static BOOST_DLLEXPORT void instantiate() BOOST_USED;
     enum { x = sizeof(instantiate(),3) };
 # else
@@ -122,19 +114,19 @@ struct ptr_serialization_support
 };
 
 template <class Archive, class Serializable>
-BOOST_DLLEXPORT void
+BOOST_DLLEXPORT void 
 ptr_serialization_support<Archive,Serializable>::instantiate()
 {
     export_impl<Archive,Serializable>::enable_save(
         #if ! defined(__BORLANDC__)
-        BOOST_DEDUCED_TYPENAME
+        BOOST_DEDUCED_TYPENAME 
         #endif
         Archive::is_saving()
     );
 
     export_impl<Archive,Serializable>::enable_load(
         #if ! defined(__BORLANDC__)
-        BOOST_DEDUCED_TYPENAME
+        BOOST_DEDUCED_TYPENAME 
         #endif
         Archive::is_loading()
     );
@@ -142,7 +134,7 @@ ptr_serialization_support<Archive,Serializable>::instantiate()
 
 template<class T>
 struct guid_initializer
-{
+{  
     const guid_initializer & export_guid(char const* /* key */, mpl::false_){
         // generates the statically-initialized objects whose constructors
         // register the information allowing serialization of T objects
@@ -157,7 +149,7 @@ struct guid_initializer
         BOOST_STATIC_WARNING(boost::is_polymorphic<T>::value);
         assert(NULL != key);
         boost::serialization::singleton<
-            BOOST_DEDUCED_TYPENAME
+            BOOST_DEDUCED_TYPENAME 
             boost::serialization::type_info_implementation<T>::type
         >::get_mutable_instance().key_register(key);
         // note: exporting an abstract base class will have no effect

@@ -37,12 +37,10 @@
  * \brief Implementation of qx::validate<T>() function (validator engine)
  */
 
-#ifndef Q_MOC_RUN
 #include <boost/static_assert.hpp>
 #include <boost/mpl/if.hpp>
 #include <boost/mpl/logical.hpp>
 #include <boost/type_traits/is_pointer.hpp>
-#endif
 
 #include <QxValidator/IxValidatorX.h>
 #include <QxValidator/QxInvalidValueX.h>

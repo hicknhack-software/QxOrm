@@ -37,13 +37,11 @@
  * \brief List of all classes registered into QxOrm context
  */
 
-#ifndef Q_MOC_RUN
 #include <boost/function.hpp>
 #include <boost/mpl/if.hpp>
 #include <boost/mpl/or.hpp>
 #include <boost/mpl/logical.hpp>
 #include <boost/type_traits/is_pointer.hpp>
-#endif
 
 #include <QxCommon/QxBool.h>
 

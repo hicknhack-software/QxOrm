@@ -37,12 +37,10 @@
  * \brief Base class for all relationships defined between 2 classes (or between 2 tables in database)
  */
 
-#ifndef Q_MOC_RUN
 #include <boost/mpl/if.hpp>
 #include <boost/mpl/logical.hpp>
 #include <boost/type_traits/is_same.hpp>
 #include <boost/type_traits/is_pointer.hpp>
-#endif
 
 #include <QxDao/QxDao.h>
 #include <QxDao/IxSqlRelation.h>

@@ -37,9 +37,7 @@
  * \brief qx::trait::qt_meta_object<T>::get() : if T is based on QObject class, then return QMetaObject instance of Qt introspection engine, else return NULL
  */
 
-#ifndef Q_MOC_RUN
 #include <boost/type_traits/is_base_of.hpp>
-#endif
 
 #include <QtCore/qmetaobject.h>
 #include <QtCore/qmetatype.h>

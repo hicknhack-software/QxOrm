@@ -37,9 +37,7 @@
  * \brief Common interface (abstract class) for persistents classes using QX_PERSISTABLE_HPP() and QX_PERSISTABLE_CPP() macros
  */
 
-#ifndef Q_MOC_RUN
 #include <boost/type_traits/is_base_of.hpp>
-#endif
 
 #include <QxDao/QxSqlQuery.h>
 #include <QxDao/QxDao.h>

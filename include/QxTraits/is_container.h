@@ -37,11 +37,9 @@
  * \brief qx::trait::is_container<T>::value : return true if T is a container from stl, boost, Qt or QxOrm library, otherwise return false
  */
 
-#ifndef Q_MOC_RUN
 #include <boost/mpl/if.hpp>
 #include <boost/mpl/or.hpp>
 #include <boost/mpl/logical.hpp>
-#endif
 
 #include <QxTraits/is_boost_unordered_map.h>
 #include <QxTraits/is_boost_unordered_set.h>
@@ -72,32 +70,32 @@ class is_container
 
 private:
 
-   typedef typename boost::mpl::or_< qx::trait::is_boost_unordered_map<T>,
-                                     qx::trait::is_boost_unordered_set<T>,
-                                     qx::trait::is_qt_hash<T>,
+   typedef typename boost::mpl::or_< qx::trait::is_boost_unordered_map<T>, 
+                                     qx::trait::is_boost_unordered_set<T>, 
+                                     qx::trait::is_qt_hash<T>, 
                                      qx::trait::is_qt_linked_list<T> >::type cond_is_container_1;
 
-   typedef typename boost::mpl::or_< typename qx::trait::is_container<T>::cond_is_container_1,
-                                     qx::trait::is_qt_list<T>,
-                                     qx::trait::is_qt_map<T>,
+   typedef typename boost::mpl::or_< typename qx::trait::is_container<T>::cond_is_container_1, 
+                                     qx::trait::is_qt_list<T>, 
+                                     qx::trait::is_qt_map<T>, 
                                      qx::trait::is_qt_multi_hash<T> >::type cond_is_container_2;
 
-   typedef typename boost::mpl::or_< typename qx::trait::is_container<T>::cond_is_container_2,
-                                     qx::trait::is_qt_multi_map<T>,
-                                     qx::trait::is_qt_set<T>,
+   typedef typename boost::mpl::or_< typename qx::trait::is_container<T>::cond_is_container_2, 
+                                     qx::trait::is_qt_multi_map<T>, 
+                                     qx::trait::is_qt_set<T>, 
                                      qx::trait::is_qt_vector<T> >::type cond_is_container_3;
 
-   typedef typename boost::mpl::or_< typename qx::trait::is_container<T>::cond_is_container_3,
-                                     qx::trait::is_qx_collection<T>,
-                                     qx::trait::is_std_list<T>,
+   typedef typename boost::mpl::or_< typename qx::trait::is_container<T>::cond_is_container_3, 
+                                     qx::trait::is_qx_collection<T>, 
+                                     qx::trait::is_std_list<T>, 
                                      qx::trait::is_std_map<T> >::type cond_is_container_4;
 
-   typedef typename boost::mpl::or_< typename qx::trait::is_container<T>::cond_is_container_4,
-                                     qx::trait::is_std_set<T>,
+   typedef typename boost::mpl::or_< typename qx::trait::is_container<T>::cond_is_container_4, 
+                                     qx::trait::is_std_set<T>, 
                                      qx::trait::is_std_vector<T> >::type cond_is_container_5;
 
-   typedef typename boost::mpl::if_< typename qx::trait::is_container<T>::cond_is_container_5,
-                                     boost::mpl::true_,
+   typedef typename boost::mpl::if_< typename qx::trait::is_container<T>::cond_is_container_5, 
+                                     boost::mpl::true_, 
                                      boost::mpl::false_ >::type type_is_container;
 
 public:

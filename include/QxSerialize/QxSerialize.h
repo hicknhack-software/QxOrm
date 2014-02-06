@@ -42,7 +42,6 @@
 #include <QxSerialize/QxSerializeFastCompil.h>
 #include <QxSerialize/boost/QxSerializeInclude.h>
 
-#ifndef Q_MOC_RUN
 #include <boost/serialization/serialization.hpp>
 #include <boost/serialization/extended_type_info_typeid.hpp>
 #include <boost/serialization/type_info_implementation.hpp>
@@ -58,9 +57,7 @@
 #include <boost/serialization/variant.hpp>
 #include <boost/serialization/vector.hpp>
 #include <boost/serialization/optional.hpp>
-#endif
 
-#ifndef Q_MOC_RUN
 #include <boost/ptr_container/serialize_ptr_array.hpp>
 #include <boost/ptr_container/serialize_ptr_circular_buffer.hpp>
 #include <boost/ptr_container/serialize_ptr_container.hpp>
@@ -71,7 +68,6 @@
 #include <boost/ptr_container/serialize_ptr_unordered_map.hpp>
 #include <boost/ptr_container/serialize_ptr_unordered_set.hpp>
 #include <boost/ptr_container/serialize_ptr_vector.hpp>
-#endif
 
 #ifdef _MSC_VER
 #pragma warning(push)

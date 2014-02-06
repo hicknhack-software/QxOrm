@@ -37,11 +37,9 @@
  * \brief qx::trait::get_base_class<T>::type : retrieve base class of type T registered into QxOrm context and return qx::trait::no_base_class_defined if no base class defined
  */
 
-#ifndef Q_MOC_RUN
 #include <boost/mpl/if.hpp>
 #include <boost/mpl/logical.hpp>
 #include <boost/type_traits/is_same.hpp>
-#endif
 
 #include <QxTraits/get_class_name.h>
 

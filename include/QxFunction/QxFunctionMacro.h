@@ -30,9 +30,7 @@
 #pragma once
 #endif
 
-#ifndef Q_MOC_RUN
 #include <boost/utility/value_init.hpp>
-#endif
 
 #define QX_FUNCTION_CLASS_FCT(className) \
 public: \

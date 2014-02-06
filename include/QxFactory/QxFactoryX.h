@@ -37,9 +37,7 @@
  * \brief List of all classes registered with QxOrm library factory pattern to create object instance dynamically using the class name
  */
 
-#ifndef Q_MOC_RUN
 #include <boost/shared_ptr.hpp>
-#endif
 
 #include <QtCore/qhash.h>
 #include <QtCore/qmutex.h>

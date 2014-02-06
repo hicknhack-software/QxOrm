@@ -39,7 +39,6 @@
 #endif // _MSC_VER
 
 #if _QX_SERIALIZE_POLYMORPHIC
-#ifndef Q_MOC_RUN
 #include <boost/archive/polymorphic_iarchive.hpp>
 #include <boost/archive/polymorphic_oarchive.hpp>
 #include <boost/archive/polymorphic_binary_iarchive.hpp>
@@ -48,28 +47,21 @@
 #include <boost/archive/polymorphic_text_oarchive.hpp>
 #include <boost/archive/polymorphic_xml_iarchive.hpp>
 #include <boost/archive/polymorphic_xml_oarchive.hpp>
-#endif
 #endif // _QX_SERIALIZE_POLYMORPHIC
 
 #if _QX_SERIALIZE_BINARY
-#ifndef Q_MOC_RUN
 #include <boost/archive/binary_iarchive.hpp>
 #include <boost/archive/binary_oarchive.hpp>
-#endif
 #endif // _QX_SERIALIZE_BINARY
 
 #if _QX_SERIALIZE_TEXT
-#ifndef Q_MOC_RUN
 #include <boost/archive/text_iarchive.hpp>
 #include <boost/archive/text_oarchive.hpp>
-#endif
 #endif // _QX_SERIALIZE_TEXT
 
 #if _QX_SERIALIZE_XML
-#ifndef Q_MOC_RUN
 #include <boost/archive/xml_iarchive.hpp>
 #include <boost/archive/xml_oarchive.hpp>
-#endif
 #endif // _QX_SERIALIZE_XML
 
 #if _QX_SERIALIZE_PORTABLE_BINARY
@@ -78,78 +70,56 @@
 #endif // _QX_SERIALIZE_PORTABLE_BINARY
 
 #if _QX_SERIALIZE_WIDE_BINARY
-#ifndef Q_MOC_RUN
 #include <boost/archive/binary_wiarchive.hpp>
 #include <boost/archive/binary_woarchive.hpp>
-#endif
 #endif // _QX_SERIALIZE_WIDE_BINARY
 
 #if _QX_SERIALIZE_WIDE_TEXT
-#ifndef Q_MOC_RUN
 #include <boost/archive/text_wiarchive.hpp>
 #include <boost/archive/text_woarchive.hpp>
-#endif
 #endif // _QX_SERIALIZE_WIDE_TEXT
 
 #if _QX_SERIALIZE_WIDE_XML
-#ifndef Q_MOC_RUN
 #include <boost/archive/xml_wiarchive.hpp>
 #include <boost/archive/xml_woarchive.hpp>
-#endif
 #endif // _QX_SERIALIZE_WIDE_XML
 
 #ifndef _QX_BOOST_ARCHIVE_SERIALIZER_IMPL_DEFINED_
 #define _QX_BOOST_ARCHIVE_SERIALIZER_IMPL_DEFINED_
 #if (BOOST_VERSION > 103800)
-#ifndef Q_MOC_RUN
 #include <boost/archive/impl/archive_serializer_map.ipp>
-#endif
 #else // (BOOST_VERSION > 103800)
-#ifndef Q_MOC_RUN
 #include <boost/archive/impl/archive_pointer_oserializer.ipp>
 #include <boost/archive/impl/archive_pointer_iserializer.ipp>
-#endif
 #endif // (BOOST_VERSION > 103800)
-#ifndef Q_MOC_RUN
 #include <boost/archive/impl/basic_binary_oprimitive.ipp>
 #include <boost/archive/impl/basic_binary_iprimitive.ipp>
 #include <boost/archive/impl/basic_binary_oarchive.ipp>
 #include <boost/archive/impl/basic_binary_iarchive.ipp>
-#endif
 #if _QX_SERIALIZE_TEXT
-#ifndef Q_MOC_RUN
 #include <boost/archive/impl/basic_text_oprimitive.ipp>
 #include <boost/archive/impl/basic_text_iprimitive.ipp>
 #include <boost/archive/impl/basic_text_oarchive.ipp>
 #include <boost/archive/impl/basic_text_iarchive.ipp>
-#endif
 #endif // _QX_SERIALIZE_TEXT
 #if (BOOST_VERSION > 103800)
 #else // (BOOST_VERSION > 103800)
 #if _QX_INCLUDE_BOOST_SERIALIZE_ARCHIVE_IMPL_IPP
 #if _QX_SERIALIZE_TEXT
-#ifndef Q_MOC_RUN
 #include <boost/archive/impl/text_oarchive_impl.ipp>
 #include <boost/archive/impl/text_iarchive_impl.ipp>
-#endif
 #endif // _QX_SERIALIZE_TEXT
 #if _QX_SERIALIZE_XML
-#ifndef Q_MOC_RUN
 #include <boost/archive/impl/xml_oarchive_impl.ipp>
 #include <boost/archive/impl/xml_iarchive_impl.ipp>
-#endif
 #endif // _QX_SERIALIZE_XML
 #if _QX_SERIALIZE_WIDE_TEXT
-#ifndef Q_MOC_RUN
 #include <boost/archive/impl/text_woarchive_impl.ipp>
 #include <boost/archive/impl/text_wiarchive_impl.ipp>
-#endif
 #endif // _QX_SERIALIZE_WIDE_TEXT
 #if _QX_SERIALIZE_WIDE_XML
-#ifndef Q_MOC_RUN
 #include <boost/archive/impl/xml_woarchive_impl.ipp>
 #include <boost/archive/impl/xml_wiarchive_impl.ipp>
-#endif
 #endif // _QX_SERIALIZE_WIDE_XML
 #endif // _QX_INCLUDE_BOOST_SERIALIZE_ARCHIVE_IMPL_IPP
 #endif // (BOOST_VERSION > 103800)

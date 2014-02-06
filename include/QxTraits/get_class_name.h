@@ -39,9 +39,7 @@
 
 #include <typeinfo>
 
-#ifndef Q_MOC_RUN
 #include <boost/algorithm/string.hpp>
-#endif
 
 #include <QxTraits/remove_attr.h>
 

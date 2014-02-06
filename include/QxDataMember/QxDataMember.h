@@ -37,16 +37,12 @@
  * \brief Concrete class property registered into QxOrm context
  */
 
-#ifndef Q_MOC_RUN
 #include <boost/serialization/serialization.hpp>
 #include <boost/serialization/nvp.hpp>
-#endif
 
-#ifndef Q_MOC_RUN
 #include <boost/tuple/tuple.hpp>
 #include <boost/tuple/tuple_comparison.hpp>
 #include <boost/tuple/tuple_io.hpp>
-#endif
 
 #include <QxDataMember/IxDataMember.h>
 

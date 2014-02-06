@@ -70,17 +70,14 @@
 #pragma warning(disable:4396)
 #endif // _MSC_VER
 
-#ifndef Q_MOC_RUN
 #include <boost/config.hpp>
 #include <boost/serialization/force_include.hpp>
-#endif
 
 #ifdef BOOST_DLLEXPORT
 #undef BOOST_DLLEXPORT
 #define BOOST_DLLEXPORT /* Nothing */
 #endif // BOOST_DLLEXPORT
 
-#ifndef Q_MOC_RUN
 #include <boost/version.hpp>
 #include <boost/scoped_ptr.hpp>
 #include <boost/shared_ptr.hpp>
@@ -91,14 +88,11 @@
 #include <boost/bind.hpp>
 #include <boost/none.hpp>
 #include <boost/optional.hpp>
-#endif
 
 #ifdef _MSC_VER
-#ifndef Q_MOC_RUN
 #include <boost/serialization/serialization.hpp> /* -- To avoid warning 4100 => header in precompiled header -- */
 #include <boost/archive/detail/iserializer.hpp>
 #include <boost/archive/detail/oserializer.hpp>
-#endif
 #endif // _MSC_VER
 
 #ifdef _MSC_VER

@@ -46,9 +46,7 @@ _foreach(drug_ptr p, lstDrugs)
  * \note QxOrm library provides also other macros to iterator over all containers : _foreach_reverse, _foreach_if, _foreach_reverse_if
  */
 
-#ifndef Q_MOC_RUN
 #include <boost/foreach.hpp>
-#endif
 
 #ifndef BOOST_FOREACH_ID
 #define BOOST_FOREACH_ID(x) x

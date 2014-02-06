@@ -42,11 +42,9 @@
 #include <QtCore/qvariant.h>
 #include <QtCore/qpair.h>
 
-#ifndef Q_MOC_RUN
 #include <boost/tuple/tuple.hpp>
 #include <boost/tuple/tuple_comparison.hpp>
 #include <boost/tuple/tuple_io.hpp>
-#endif
 
 inline std::size_t hash_value(const QString & s)      { return qHash(s); }
 inline std::size_t hash_value(const QDate & d)        { return qHash(d.toJulianDay()); }

@@ -37,7 +37,6 @@
  * \brief qx::trait::get_sql_type<T>::get() : return type name under const char * format used by database engine to map a C++ type T
  */
 
-#ifndef Q_MOC_RUN
 #include <boost/mpl/if.hpp>
 #include <boost/mpl/logical.hpp>
 #include <boost/scoped_ptr.hpp>
@@ -46,7 +45,6 @@
 #include <boost/optional.hpp>
 #include <boost/type_traits/is_enum.hpp>
 #include <boost/type_traits/is_same.hpp>
-#endif
 
 #include <QtCore/qsharedpointer.h>
 

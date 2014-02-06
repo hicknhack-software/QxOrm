@@ -37,11 +37,9 @@
  * \brief qx::trait::is_smart_ptr<T>::value : return true if T is a smart-pointer of boost, Qt or QxOrm libraries, otherwise return false
  */
 
-#ifndef Q_MOC_RUN
 #include <boost/mpl/if.hpp>
 #include <boost/mpl/or.hpp>
 #include <boost/mpl/logical.hpp>
-#endif
 
 #include <QxTraits/is_boost_intrusive_ptr.h>
 #include <QxTraits/is_boost_scoped_ptr.h>
@@ -66,20 +64,20 @@ class is_smart_ptr
 
 private:
 
-   typedef typename boost::mpl::or_< qx::trait::is_qx_dao_ptr<T>,
-                                     qx::trait::is_boost_intrusive_ptr<T>,
-                                     qx::trait::is_boost_scoped_ptr<T>,
-                                     qx::trait::is_boost_shared_ptr<T>,
+   typedef typename boost::mpl::or_< qx::trait::is_qx_dao_ptr<T>, 
+                                     qx::trait::is_boost_intrusive_ptr<T>, 
+                                     qx::trait::is_boost_scoped_ptr<T>, 
+                                     qx::trait::is_boost_shared_ptr<T>, 
                                      qx::trait::is_boost_weak_ptr<T> >::type cond_is_boost_smart_ptr;
 
-   typedef typename boost::mpl::or_< typename qx::trait::is_smart_ptr<T>::cond_is_boost_smart_ptr,
-                                     qx::trait::is_qt_scoped_ptr<T>,
-                                     qx::trait::is_qt_shared_ptr<T>,
-                                     qx::trait::is_qt_weak_ptr<T>,
+   typedef typename boost::mpl::or_< typename qx::trait::is_smart_ptr<T>::cond_is_boost_smart_ptr, 
+                                     qx::trait::is_qt_scoped_ptr<T>, 
+                                     qx::trait::is_qt_shared_ptr<T>, 
+                                     qx::trait::is_qt_weak_ptr<T>, 
                                      qx::trait::is_qt_shared_data_ptr<T> >::type cond_is_smart_ptr;
 
-   typedef typename boost::mpl::if_< typename qx::trait::is_smart_ptr<T>::cond_is_smart_ptr,
-                                     boost::mpl::true_,
+   typedef typename boost::mpl::if_< typename qx::trait::is_smart_ptr<T>::cond_is_smart_ptr, 
+                                     boost::mpl::true_, 
                                      boost::mpl::false_ >::type type_is_smart_ptr;
 
 public:

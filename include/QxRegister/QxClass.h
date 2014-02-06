@@ -37,13 +37,11 @@
  * \brief Concrete class registered into QxOrm context
  */
 
-#ifndef Q_MOC_RUN
 #include <boost/static_assert.hpp>
 #include <boost/type_traits/is_same.hpp>
 #include <boost/type_traits/is_base_of.hpp>
 #include <boost/type_traits/is_abstract.hpp>
 #include <boost/serialization/version.hpp>
-#endif
 
 #include <QxRegister/IxClass.h>
 

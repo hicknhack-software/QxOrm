@@ -30,13 +30,11 @@
 #pragma once
 #endif
 
-#ifndef Q_MOC_RUN
 #include <boost/serialization/singleton.hpp>
 #include <boost/serialization/assume_abstract.hpp>
 #include <boost/serialization/type_info_implementation.hpp>
 #include <boost/archive/detail/register_archive.hpp>
 #include <boost/mpl/bool.hpp>
-#endif
 
 #include <QxTraits/get_class_name_primitive.h>
 

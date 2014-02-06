@@ -30,12 +30,10 @@
 #pragma once
 #endif
 
-#ifndef Q_MOC_RUN
 #include <boost/static_assert.hpp>
 #include <boost/mpl/if.hpp>
 #include <boost/mpl/logical.hpp>
 #include <boost/type_traits/is_pointer.hpp>
-#endif
 
 #include <QxDao/QxDao.h>
 #include <QxDao/QxDaoPointer.h>

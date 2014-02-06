@@ -30,17 +30,13 @@
 #pragma once
 #endif
 
-#ifndef Q_MOC_RUN
 #include <boost/serialization/serialization.hpp>
 #include <boost/serialization/split_free.hpp>
 #include <boost/serialization/nvp.hpp>
-#endif
 
-#ifndef Q_MOC_RUN
 #include <boost/tuple/tuple.hpp>
 #include <boost/tuple/tuple_comparison.hpp>
 #include <boost/tuple/tuple_io.hpp>
-#endif
 
 namespace boost {
 namespace serialization {

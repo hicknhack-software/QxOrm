@@ -37,12 +37,10 @@
  * \brief qx::cache : based on singleton pattern, provide basic thread-safe cache feature to backup and restore any kind of objects (for example, object fetched from database)
  */
 
-#ifndef Q_MOC_RUN
 #include <boost/any.hpp>
 #include <boost/tuple/tuple.hpp>
 #include <boost/tuple/tuple_comparison.hpp>
 #include <boost/tuple/tuple_io.hpp>
-#endif
 
 #include <QxCommon/QxBool.h>
 

@@ -37,13 +37,11 @@
  * \brief Common interface for all functions registered into QxOrm context (used by introspection engine)
  */
 
-#ifndef Q_MOC_RUN
 #include <boost/any.hpp>
 #include <boost/function.hpp>
 #include <boost/lexical_cast.hpp>
 #include <boost/static_assert.hpp>
 #include <boost/type_traits/is_same.hpp>
-#endif
 
 #include <QxCommon/QxBool.h>
 #include <QxCommon/QxPropertyBag.h>

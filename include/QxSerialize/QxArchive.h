@@ -43,11 +43,9 @@
 #include <fstream>
 #include <exception>
 
-#ifndef Q_MOC_RUN
 #include <boost/archive/archive_exception.hpp>
 #include <boost/serialization/serialization.hpp>
 #include <boost/serialization/nvp.hpp>
-#endif
 
 #include <QxTraits/archive_wide_traits.h>
 #include <QxTraits/get_class_name.h>

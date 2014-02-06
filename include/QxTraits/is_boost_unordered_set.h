@@ -37,11 +37,9 @@
  * \brief qx::trait::is_boost_unordered_set<T>::value : return true if T is a boost::unordered_set<> or boost::unordered_multiset<> container, otherwise return false
  */
 
-#ifndef Q_MOC_RUN
 #include <boost/unordered_set.hpp>
 #include <boost/mpl/if.hpp>
 #include <boost/mpl/logical.hpp>
-#endif
 
 namespace qx {
 namespace trait {
@@ -65,8 +63,8 @@ public:
 
    enum { value = (sizeof(qx::trait::is_boost_unordered_set<T>::isContainer(t)) == sizeof(char)) };
 
-   typedef typename boost::mpl::if_c<qx::trait::is_boost_unordered_set<T>::value,
-                                     boost::mpl::true_,
+   typedef typename boost::mpl::if_c<qx::trait::is_boost_unordered_set<T>::value, 
+                                     boost::mpl::true_, 
                                      boost::mpl::false_>::type type;
 
 };

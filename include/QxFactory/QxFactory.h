@@ -37,11 +37,9 @@
  * \brief Concrete factory class to create object dynamically using the class name
  */
 
-#ifndef Q_MOC_RUN
 #include <boost/shared_ptr.hpp>
 #include <boost/static_assert.hpp>
 #include <boost/type_traits/is_abstract.hpp>
-#endif
 
 #include <QxFactory/IxFactory.h>
 

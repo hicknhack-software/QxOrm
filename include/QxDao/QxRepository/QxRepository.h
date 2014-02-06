@@ -37,9 +37,7 @@
  * \brief Repository to provide a common interface to communicate with database
  */
 
-#ifndef Q_MOC_RUN
 #include <boost/type_traits/is_base_of.hpp>
-#endif
 
 #include <QxDao/QxRepository/IxRepository.h>
 #include <QxDao/QxRepository/QxRepositoryX.h>

@@ -37,10 +37,8 @@
  * \brief Helper class to store a date value into database under neutral format (YYYYMMDD) => cross database compatibility
  */
 
-#ifndef Q_MOC_RUN
 #include <boost/serialization/serialization.hpp>
 #include <boost/serialization/nvp.hpp>
-#endif
 
 #include <QtCore/qdatetime.h>
 

@@ -30,9 +30,7 @@
 #pragma once
 #endif
 
-#ifndef Q_MOC_RUN
 #include <boost/static_assert.hpp>
-#endif
 
 #include <QtSql/qsqlquery.h>
 

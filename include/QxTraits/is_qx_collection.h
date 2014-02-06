@@ -37,11 +37,9 @@
  * \brief qx::trait::is_qx_collection<T>::value : return true if T is a qx::QxCollection<> container of QxOrm library, otherwise return false
  */
 
-#ifndef Q_MOC_RUN
 #include <boost/mpl/if.hpp>
 #include <boost/mpl/logical.hpp>
 #include <boost/type_traits/is_base_of.hpp>
-#endif
 
 #include <QxCollection/IxCollection.h>
 
@@ -60,8 +58,8 @@ public:
 
    enum { value = boost::is_base_of<qx::IxCollection, T>::value };
 
-   typedef typename boost::mpl::if_c<qx::trait::is_qx_collection<T>::value,
-                                     boost::mpl::true_,
+   typedef typename boost::mpl::if_c<qx::trait::is_qx_collection<T>::value, 
+                                     boost::mpl::true_, 
                                      boost::mpl::false_>::type type;
 
 };

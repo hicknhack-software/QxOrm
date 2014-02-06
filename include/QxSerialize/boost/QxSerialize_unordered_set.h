@@ -30,18 +30,14 @@
 #pragma once
 #endif
 
-#ifndef Q_MOC_RUN
 #include <boost/unordered_set.hpp>
-#endif
 
-#ifndef Q_MOC_RUN
 #include <boost/serialization/serialization.hpp>
 #include <boost/serialization/collections_save_imp.hpp>
 #include <boost/serialization/collections_load_imp.hpp>
 #include <boost/serialization/split_free.hpp>
 #include <boost/serialization/utility.hpp>
 #include <boost/serialization/nvp.hpp>
-#endif
 
 namespace boost {
 namespace serialization {

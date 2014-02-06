@@ -37,11 +37,9 @@
  * \brief qx::trait::is_ptr_to_pod<T>::value : return true if T is a pointer to a POD type (char, int, long, etc.), otherwise return false
  */
 
-#ifndef Q_MOC_RUN
 #include <boost/mpl/if.hpp>
 #include <boost/mpl/logical.hpp>
 #include <boost/type_traits/is_pointer.hpp>
-#endif
 
 #include <QxTraits/is_qx_pod.h>
 

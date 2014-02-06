@@ -30,14 +30,12 @@
 #pragma once
 #endif
 
-#ifndef Q_MOC_RUN
 #include <boost/serialization/serialization.hpp>
 #include <boost/serialization/split_free.hpp>
 #include <boost/serialization/version.hpp>
 #include <boost/serialization/nvp.hpp>
 #include <boost/serialization/level.hpp>
 #include <boost/serialization/string.hpp>
-#endif
 
 #include <QtCore/qstring.h>
 

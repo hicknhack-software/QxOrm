@@ -37,11 +37,9 @@
  * \brief qx::trait::is_container_key_value<T>::value : return true if T is a map or hash-map (with <Key, Value> template format) container from stl, boost, Qt or QxOrm library, otherwise return false
  */
 
-#ifndef Q_MOC_RUN
 #include <boost/mpl/if.hpp>
 #include <boost/mpl/or.hpp>
 #include <boost/mpl/logical.hpp>
-#endif
 
 #include <QxTraits/is_container.h>
 
@@ -58,18 +56,18 @@ class is_container_key_value
 
 private:
 
-   typedef typename boost::mpl::or_< qx::trait::is_boost_unordered_map<T>,
-                                     qx::trait::is_std_map<T>,
-                                     qx::trait::is_qt_map<T>,
+   typedef typename boost::mpl::or_< qx::trait::is_boost_unordered_map<T>, 
+                                     qx::trait::is_std_map<T>, 
+                                     qx::trait::is_qt_map<T>, 
                                      qx::trait::is_qt_hash<T> >::type cond_is_container_key_value_1;
 
-   typedef typename boost::mpl::or_< typename qx::trait::is_container_key_value<T>::cond_is_container_key_value_1,
-                                     qx::trait::is_qt_multi_map<T>,
-                                     qx::trait::is_qt_multi_hash<T>,
+   typedef typename boost::mpl::or_< typename qx::trait::is_container_key_value<T>::cond_is_container_key_value_1, 
+                                     qx::trait::is_qt_multi_map<T>, 
+                                     qx::trait::is_qt_multi_hash<T>, 
                                      qx::trait::is_qx_collection<T> >::type cond_is_container_key_value_2;
 
-   typedef typename boost::mpl::if_< typename qx::trait::is_container_key_value<T>::cond_is_container_key_value_2,
-                                     boost::mpl::true_,
+   typedef typename boost::mpl::if_< typename qx::trait::is_container_key_value<T>::cond_is_container_key_value_2, 
+                                     boost::mpl::true_, 
                                      boost::mpl::false_ >::type type_is_container_key_value;
 
 public:
