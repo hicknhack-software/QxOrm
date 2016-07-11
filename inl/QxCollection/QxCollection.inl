@@ -23,6 +23,8 @@
 **
 ****************************************************************************/
 
+#include <QDataStream>
+
 namespace qx {
 
 template <typename Key, typename Value>
